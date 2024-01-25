@@ -1,0 +1,90 @@
+<form>
+  <div class="header">
+    <img align="right" src="assets\img\laptop.png" height="150" />
+    <h1 class=hcolor>Contact Our </h1>
+
+    <h2>Customer Support Center</h2>
+  </div>
+
+</form>
+<br><br><br>
+<div class="header2">
+  <h5>Contact Information</h5>
+  <h6>Please fill out your contact information below</h6>
+</div>
+
+
+
+
+<form [formGroup]="MarvellousForm">
+  <div class="form-group">
+
+    <h5>First Name*</h5>
+    <input class="form-control" [class.is-invalid]="MarvellousForm.get('fname')?.invalid" type="text"
+      formControlName="fname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <small [class.d-none]="MarvellousForm.get('fname')?.valid" class="text-danger">Only Alphabet Allowed</small><br>
+    <br>
+
+    <h5>Last Name*</h5>
+    <input class="form-control" type="text" formControlName="lname">
+  </div>
+  <br><br>
+  <div class="form-group">
+    <h5>Email*</h5>
+    <input type="email" class="form-control" [class.is-invalid]="MarvellousForm.get('email')?.invalid"
+      formControlName="email">
+    <small [class.d-none]="MarvellousForm.get('email')?.valid" class="text-danger">Invalid Email Address</small><br>
+    <br>
+
+  </div>
+  <br><br>
+  <div class="form-group">
+    <h5>Phone*</h5>
+    <input type="text" class="form-control" [class.is-invalid]="MarvellousForm.get('phone')?.invalid"
+      formControlName="phone">
+    <small [class.d-none]="MarvellousForm.get('phone')?.valid" class="text-danger">Only 10 Digit</small><br> <br>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <h5>City*</h5>
+    <input type="text" class="form-control" [class.is-invalid]="MarvellousForm.get('city')?.invalid"
+      formControlName="city">
+    <small [class.d-none]="MarvellousForm.get('city')?.valid" class="text-danger"> Invalid City</small><br> <br>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <h5>State</h5>
+    <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example">
+      <option selected>Select State</option>
+      <option value="1">Maharashtra</option>
+      <option value="2">Gujrat</option>
+      <option value="3">Uttarpradesh</option>
+    </select>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <h5>Zipcode*</h5>
+    <input type="text" class="form-control" [class.is-invalid]="MarvellousForm.get('zcode')?.invalid"
+      formControlName="zcode">
+    <small [class.d-none]="MarvellousForm.get('zcode')?.valid" class="text-danger"> Invalid Zipcode</small><br><br>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <h5>Comment</h5>
+
+    <textarea class="form-control" [class.is-invalid]="MarvellousForm.get('comment')?.invalid" formControlName="comment"
+      rows="3"></textarea>
+    <small [class.d-none]="MarvellousForm.get('comment')?.valid" class="text-danger">Minimum 30 Character</small><br>
+    <br>
+  </div>
+  <br><br>
+  <h4>Complete the form to enable button.</h4>
+  <div class="form-control text-center">
+    <button type="button" class="btn btn-primary" [disabled]= "!MarvellousForm.valid" formControlName="submit">SUBMIT
+      FORM</button>
+  </div>
+</form>
+
+
+
+<router-outlet></router-outlet>

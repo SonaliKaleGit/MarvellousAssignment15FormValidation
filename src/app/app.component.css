@@ -1,0 +1,22 @@
+.form-control{
+    display: inline-block; width:49%; 
+                            
+}
+
+.hcolor
+{
+    color: purple;
+}
+.header
+{
+text-align:center ; 
+   background-color:blanchedalmond;
+ 
+}
+.header2
+{
+text-align:center ; 
+}
+.text-center {
+    text-align: center;
+  }
